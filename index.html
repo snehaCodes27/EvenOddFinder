@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>even odd finder App by Sneha</title>
+    <style>
+        * {
+            text-align: center;
+            font-size: 50px;
+        }
+        body {
+            background-color: lightyellow;
+        }
+	h1{ background-color:black;color:white;text-align:center;}
+    </style>
+</head>
+<body>
+    <h1>Name Greeting App</h1>
+
+    <form onsubmit="find()">
+        <input type="number" id="num" placeholder="Enter Integer" /> <br /><br />
+        <input type="submit" />
+    </form>
+
+    <h2 id="msg"></h2>
+
+    <script>
+        function find() {
+            event.preventDefault(); // Needed to stop form submission
+            let num = document.getElementById("num");
+            let msg = document.getElementById("msg");
+
+	    if(num.value === "")
+            {
+		alert("please enter number");
+		msg.innerHTML="";
+		num.focus();
+		return;
+	    }
+		
+		let n = parseInt(num.value);
+		if(n%2===0)
+			msg.innerHTML= "even";
+		else
+			msg.innerHTML="odd"
+
+                   }
+    </script>
+</body>
+</html>
